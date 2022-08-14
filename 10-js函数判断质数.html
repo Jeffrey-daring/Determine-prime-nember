@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数判断质数</title>
+</head>
+<script>
+    var prime = prompt('请输入数字:')
+    if (prime === '2') {
+        alert('质数')
+    } else if (prime === '1' || prime === '0') {
+        alert('既不是合数也不是质数')
+    } else {
+        function prime_num() {
+            var arr = []
+            for (i = 2; i < prime && i > 1; i++) {
+                arr[i - 2] = prime % i
+            }
+            console.log(arr);
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] == 0) {
+                    prime = '合数';
+                    break;
+                } else if (prime !== 0) {
+                    prime = '质数'
+                }
+            }
+            return prime;
+        }
+        prime_num();
+        alert(prime_num());
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
